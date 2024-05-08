@@ -4,7 +4,7 @@ number = random.randint(-10000, 10000)
 if number > 0:
     lastdg = int(str(number)[-1])
 elif number < 0:
-    lastdg = int(str(number)[-1] * 1)
+    lastdg = int(str(number)[-1]) * -1
 else:
     lastdg = 0
 if lastdg > 5:
