@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def islower(c):
-    if int(c) < 97:
+    if c < "A":
         return True
     return False
