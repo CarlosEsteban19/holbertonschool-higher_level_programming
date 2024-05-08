@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def islower(c):
-    if c < "A":
+    if c < "{" and c > "'":
         return True
     return False
