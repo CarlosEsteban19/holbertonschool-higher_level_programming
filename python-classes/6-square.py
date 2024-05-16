@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-"""empty class"""
+"""square class"""
 
 
 class Square:
-    """empty class"""
+    """defines a square"""
     def __init__(self, size=0, position=(0, 0)):
+
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if type(position) is not tuple or len(position) > 2:
+
+        if type(position) is not tuple or len(position) != 2\
+            or type(position[0]) is not int or type(position[1]) is not int\
+                or position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        for num in position:
-            if type(num) is not int or num < 0:
-                raise TypeError(
-                    "position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
@@ -40,12 +40,10 @@ class Square:
     @position.setter
     def position(self, value):
         """set position"""
-        if type(value) is not tuple or len(value) > 2:
+        if type(value) is not tuple or len(value) != 2\
+            or type(value[0]) is not int or type(value[1]) is not int\
+                or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        for num in value:
-            if type(num) is not int or num < 0:
-                raise TypeError(
-                    "position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
