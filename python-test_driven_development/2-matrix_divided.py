@@ -17,5 +17,4 @@ def matrix_divided(matrix, div):
         for i in row:
             if type(i) not in (int, float):
                 raise TypeError(e)
-    return list(map(lambda row: list(map(
-        lambda x: round(x / div, 2), row)), matrix))
+    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
