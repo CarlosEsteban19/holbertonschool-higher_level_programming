@@ -1,6 +1,8 @@
 add_integer test
 ================
 
+This tests the add_integer function.
+
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
@@ -12,15 +14,15 @@ add_integer test
 98
 >>> add_integer(2, 2)
 4
->>> add_integer(-1, -1)
--2
+>>> add_integer(0, 0)
+0
 >>> try:
 ...     add_integer(4, "School")
 ... except Exception as e:
 ...     print(e)
 b must be an integer
 >>> try:
-...     add_integer(None)
+...     add_integer("School", 4)
 ... except Exception as e:
 ...     print(e)
 a must be an integer
