@@ -13,6 +13,12 @@ with different edge cases.
 100
 >>> add_integer(100.3, -2)
 98
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(a, 123)
+Traceback (most recent call last):
+NameError: name 'a' is not defined
 >>> try:
 ...     add_integer(4, "School")
 ... except Exception as e:
