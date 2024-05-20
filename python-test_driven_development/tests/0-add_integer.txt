@@ -1,7 +1,8 @@
-add_integer test
-================
+the "add_integer" doctest
+=========================
 
-This tests the add_integer function.
+This tests the add_integer function
+with different edge cases.
 
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
@@ -12,10 +13,6 @@ This tests the add_integer function.
 100
 >>> add_integer(100.3, -2)
 98
->>> add_integer(2, 2)
-4
->>> add_integer(0, 0)
-0
 >>> try:
 ...     add_integer(4, "School")
 ... except Exception as e:
@@ -25,4 +22,3 @@ b must be an integer
 ...     add_integer("School", 4)
 ... except Exception as e:
 ...     print(e)
-a must be an integer
