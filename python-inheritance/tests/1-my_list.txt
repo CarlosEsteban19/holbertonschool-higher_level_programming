@@ -21,6 +21,10 @@ with different edge cases.
 >>> print(my_list)
 [1, 2, 3]
 
+>>> my_list = MyList([1, 2, -3])
+>>> my_list.print_sorted()
+[-3, 1, 2]
+
 >>> my_list = MyList(None)
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
