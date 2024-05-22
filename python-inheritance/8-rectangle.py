@@ -24,10 +24,8 @@ class Rectangle(BaseGeometry):
     """class derived from base geometry"""
     def __init__(self, width, height):
 
-        # deal with width
         super().integer_validator("width", width)
         self.__width = width
 
-        # deal with height
         super().integer_validator("height", height)
         self.__height = height
