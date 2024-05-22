@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""comentario"""
+"""function that returns list of attributes and methods of an object"""
 
 
 def lookup(obj):
-    """comentario"""
+    """look up function"""
+
     list = dir(obj)
     return list
