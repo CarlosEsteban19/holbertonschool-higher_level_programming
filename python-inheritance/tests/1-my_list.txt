@@ -5,6 +5,7 @@ This tests the 1-my_list.py class method
 with different edge cases.
 
 >>> MyList = __import__('1-my_list').MyList
+
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -13,17 +14,22 @@ with different edge cases.
 >>> my_list.append(5)
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
+
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
 >>> my_list = MyList([1, 2, 3])
 >>> print(my_list)
 [1, 2, 3]
+
 >>> my_list = MyList(None)
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
+
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
 >>> my_list4 = MyList([0])
 >>> my_list4 is MyList([0])
 False
