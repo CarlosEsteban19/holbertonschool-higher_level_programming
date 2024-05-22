@@ -1,6 +1,5 @@
 The "1-my_list.txt" doctest
 ===========================
-
 This tests the 1-my_list.py class method
 with different edge cases.
 
