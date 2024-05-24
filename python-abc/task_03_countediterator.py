@@ -2,8 +2,8 @@
 """comentario"""
 
 
-class CountedIterator(iter):
-    """Class derived from iter"""
+class CountedIterator:
+    """Class to mimic iter"""
     def __init__(self, data):
         self.data = iter(data)
         self.counter = 0
