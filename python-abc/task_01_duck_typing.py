@@ -26,6 +26,8 @@ class Circle(Shape):
 
     def perimeter(self):
         """return perimeter"""
+        if self.radius <= 0:
+            return 0
         return 2 * pi * self.radius
 
 
