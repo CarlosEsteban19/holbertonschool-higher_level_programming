@@ -5,7 +5,7 @@
 class CountedIterator(iter):
     """Class derived from iter"""
     def __init__(self, data):
-        self.data = data
+        self.data = iter(data)
         self.counter = 0
 
     def get_count(self):
