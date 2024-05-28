@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A script that adds all arguments to a Python list and saves them to file"""
 from sys import argv
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
