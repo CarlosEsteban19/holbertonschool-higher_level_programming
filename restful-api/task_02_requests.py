@@ -22,10 +22,10 @@ def fetch_and_save_posts():
             postlist.append({'id': post['id'], 'title': post['title'],
                              'body': post['body']})
 
-    with open("posts.csv", 'w', encoding="utf-8") as file:
-        map = ['id', 'title', 'body']  # define column headers
-        author = csv.DictWriter(file, fieldnames=map)
+        with open("posts.csv", 'w', encoding="utf-8") as file:
+            map = ['id', 'title', 'body']  # define column headers
+            author = csv.DictWriter(file, fieldnames=map)
 
-        author.writeheader()
-        for post in postlist:
-            author.writerow(post)
+            author.writeheader()
+            for post in postlist:
+                author.writerow(post)
