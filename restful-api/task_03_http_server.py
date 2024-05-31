@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-"""restful-api task 3"""
 import http.server
 import json
 
@@ -28,8 +26,7 @@ class HttpHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            error_message = {"error": "Endpoint not found"}
-            self.wfile.write(json.dumps(error_message).encode())
+            self.wfile.write(b"404 Not Found")
 
 
 if __name__ == "__main__":
