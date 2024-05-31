@@ -21,10 +21,9 @@ class HttpHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode("utf-8"))
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            status = {"status": "OK"}
-            self.wfile.write(json.dumps(status).encode("utf-8"))
+            self.wfile.write(b"OK")
         elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -33,11 +32,10 @@ class HttpHandler(http.server.BaseHTTPRequestHandler):
                     "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode("utf-8"))
         else:
-            self.send_response(404)
-            self.send_header("Content-type", "application/json")
+            self.send_response("404 Not Found")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            error_message = {"error": "Endpoint not found"}
-            self.wfile.write(json.dumps(error_message).encode("utf-8"))
+            self.wfile.write(b"Endpoint not found")
 
 
 PORT = 8000
