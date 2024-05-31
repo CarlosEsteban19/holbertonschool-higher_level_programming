@@ -32,14 +32,15 @@ class HttpHandler(http.server.BaseHTTPRequestHandler):
                     "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode("utf-8"))
         else:
-            self.send_response(404)
+            self.send_response("404 not found")
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(b"404 not found")
 
 
-PORT = 8000
-httpd = http.server.HTTPServer(('', PORT), HttpHandler)
-# Start the server
-print(f"Serving on port {PORT}")
-httpd.serve_forever()
+if __name__ == "__main__":
+    PORT = 8000
+    httpd = http.server.HTTPServer(('', PORT), HttpHandler)
+    # Start the server
+    print(f"Serving on port {PORT}")
+    httpd.serve_forever()
