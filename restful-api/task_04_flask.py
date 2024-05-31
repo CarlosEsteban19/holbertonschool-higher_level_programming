@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+# user data
 users = {}
 
 
@@ -43,4 +44,4 @@ def add():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)  # Run the Flask development server
