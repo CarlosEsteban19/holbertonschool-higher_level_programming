@@ -38,8 +38,9 @@ class HttpHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"404 not found")
 
 
-PORT = 8000
-httpd = http.server.HTTPServer(('', PORT), HttpHandler)
-# Start the server
-print(f"Serving on port {PORT}")
-httpd.serve_forever()
+if __name__ == "__main__":
+    PORT = 8000
+    httpd = http.server.HTTPServer(('', PORT), HttpHandler)
+    # Start the server
+    print(f"Serving on port {PORT}")
+    httpd.serve_forever()
