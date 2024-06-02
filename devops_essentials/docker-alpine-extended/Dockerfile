@@ -1,3 +1,3 @@
 FROM alpine:latest
 RUN apk add --no-cache curl
-COPY config.txt /app/config.txt
+COPY ./devops_essentials/docker-alpine-extended/config.txt /app/config.txt
