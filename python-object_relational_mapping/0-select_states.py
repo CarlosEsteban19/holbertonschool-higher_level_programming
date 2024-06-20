@@ -13,9 +13,9 @@ def list_states(username, password, db_name):
             user=username,
             password=password,
             db=db_name
-        )  # Connection
+        )
 
-        cursor = db.cursor()  # Object that interacts with database
+        cursor = db.cursor()
         cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
         states = cursor.fetchall()
