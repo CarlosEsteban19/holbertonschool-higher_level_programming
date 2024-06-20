@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+"""some imports to help"""
 import sys
 import MySQLdb
 
 
 def list_states(username, password, db_name):
+    """list all states from database table"""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
