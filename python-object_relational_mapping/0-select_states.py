@@ -25,7 +25,7 @@ def list_states(username, password, db_name):
         db.close()
 
     except MySQLdb.Error as e:
-        print(e)
+        print(f"Error connectig to MySQL: {e}")
 
 
 if __name__ == "__main__":
