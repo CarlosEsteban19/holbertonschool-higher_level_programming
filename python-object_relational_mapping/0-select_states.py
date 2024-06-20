@@ -11,7 +11,7 @@ def list_states(username, password, db_name):
             host="localhost",
             port=3306,
             user=username,
-            passwd=password,
+            password=password,
             db=db_name
         )  # Connection
 
