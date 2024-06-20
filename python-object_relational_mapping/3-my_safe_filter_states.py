@@ -13,8 +13,8 @@ def list_states(username, password, database_name, state_name):
                            password=password,
                            db=database_name)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = BINARY\
-        '{}' ORDER BY id ASC".format(state_name))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(query, (state_name,))
     states = cursor.fetchall()
     for state in states:
         print(state)
