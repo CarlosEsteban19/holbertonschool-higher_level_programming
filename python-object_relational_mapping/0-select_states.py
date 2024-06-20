@@ -6,14 +6,13 @@ import MySQLdb
 
 def list_states(username, password, db_name):
     """list all states from database table"""
+
     try:
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            password=password,
-            db=db_name
-        )
+        db = MySQLdb.connect(host="localhost",
+                             port=3306,
+                             user=username,
+                             password=password,
+                             db=db_name)
 
         cursor = db.cursor()
         cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
