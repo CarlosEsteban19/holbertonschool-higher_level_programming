@@ -1,36 +1,34 @@
 #!/usr/bin/python3
-"""some imports to help"""
-import sys
+"""Lists all states in a database"""
 import MySQLdb
+import sys
 
 
 def list_states(username, password, db_name):
-    """list all states from database table"""
+    """Connects to MySQL server"""
 
     try:
-        db = MySQLdb.connect(host="localhost",
-                             port=3306,
-                             user=username,
-                             password=password,
-                             db=db_name)
-
-        cursor = db.cursor()
+        conn = MySQLdb.connect(host='localhost',
+                               port=3306,
+                               user=username,
+                               password=password,
+                               db=db_name)
+        cursor = conn.cursor()
         cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
-
         states = cursor.fetchall()
         for state in states:
             print(state)
 
         cursor.close()
-        db.close()
+        conn.close()
 
     except MySQLdb.Error as e:
-        print(f"Error connectig to MySQL: {e}")
+        print(f"Error connectig to MySQL or execuiting query: {e}")
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: {} username password database_name".format(sys.argv[0]))
+        print("Usage: python3 0-selsct_states.py username password database")
     else:
         username = sys.argv[1]
         password = sys.argv[2]
