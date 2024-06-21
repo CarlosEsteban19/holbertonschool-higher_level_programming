@@ -14,12 +14,11 @@ if __name__ == "__main__":
                            password=sys.argv[2],
                            db=sys.argv[3])
     cursor = conn.cursor()
-    query = "SELECT cities.id, cities.name, states.name FROM cities\
-        JOIN states ON states.id = cities.state_id WHERE states.name = %s\
+    query = "SELECT cities.name FROM cities JOIN states ON\
+        states.id = cities.state_id WHERE states.name = %s\
             ORDER BY cities.id ASC"
     cursor.execute(query, (sys.argv[4],))
     cities = cursor.fetchall()
-    for city in cities:
-        print(city)
+    print(", ".join(city[0] for city in cities))
     cursor.close()
     conn.close()
