@@ -15,7 +15,7 @@ if __name__ == "__main__":
                            db=sys.argv[3])
     cursor = conn.cursor()
     query = "SELECT cities.id, cities.name, states.name FROM cities\
-        JOIN states ON states.id = cities.state_id WHERE state.name = %s\
+        JOIN states ON states.id = cities.state_id WHERE states.name = %s\
             ORDER BY cities.id ASC"
     cursor.execute(query, (sys.argv[4],))
     cities = cursor.fetchall()
