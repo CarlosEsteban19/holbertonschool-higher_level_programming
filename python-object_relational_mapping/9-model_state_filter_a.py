@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State).where(State.name.like("a")).order_by(
+    states = session.query(State).where(State.name.like("%a")).order_by(
         State.id).all()
 
     for state in states:
