@@ -18,8 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).where(State.name.like(sys.argv[4])).order_by(
-        State.id).all()
+    state = session.query(State).where(State.name.like(str(sys.argv[4])))\
+        .order_by(State.id).all()
 
     if state is not None:
         print(f"{state.id}")
