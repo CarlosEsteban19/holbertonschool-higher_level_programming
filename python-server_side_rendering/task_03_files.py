@@ -53,7 +53,7 @@ def reader():
         if not data:
             return render_template('product_display.html', error='Product not found')
 
-    return render_template('product_display.html', products=data)
+    return render_template('product_display.html', products=product_data)
 
 
 @app.route('/items')
