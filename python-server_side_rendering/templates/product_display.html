@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <header>{% include "header.html" %}</header>
+        <table>
+            <caption>Product Display</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <body>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+                {% endfor %}
+            </body>
+        </table>
+    </body>
+</html>
