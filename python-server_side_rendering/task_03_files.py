@@ -37,23 +37,25 @@ def contact():
 @app.route('/products')
 def reader():
     source = request.args.get('source')
-    id = request.args.get('id')
+    product_id = request.args.get('id')
 
+    if source not in ['json', 'csv']:
+        return render_template('product_display.html', error='Wrong source')
+
+    data = []
     if source == 'json':
-        product_data = json_reader('products.json')
+        data = json_reader()
     elif source == 'csv':
-        product_data = csv_reader('products.csv')
-    else:
-        return render_template('product_display.html', error='Wrong Source')
+        data = csv_reader()
 
-    if id:
-        data = [product for product in product_data
-                if str(product['id']) == str(id)]
-
-        if not data:
+    if product_id:
+        filtered_data = [product for product in data if str(
+            product['id']) == product_id]
+        if not filtered_data:
             return render_template('product_display.html', error='Product not found')
+        data = filtered_data
 
-    return render_template('product_display.html', products=product_data)
+    return render_template('product_display.html', products=data)
 
 
 @app.route('/items')
