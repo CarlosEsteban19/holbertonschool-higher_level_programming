@@ -44,9 +44,9 @@ def reader():
 
     data = []
     if source == 'json':
-        data = json_reader()
+        data = json_reader('products.json')
     elif source == 'csv':
-        data = csv_reader()
+        data = csv_reader('products.csv')
 
     if product_id:
         filtered_data = [product for product in data if str(
